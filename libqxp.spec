@@ -3,25 +3,31 @@
 %bcond_without	static_libs	# don't build static library
 
 Summary:	QuarkXPress Import Library
+Summary(pl.UTF-8):	Biblioteka do importu dokumentów QuarkXPress
 Name:		libqxp
 Version:	0.0.1
 Release:	1
 License:	MPL v2.0
 Group:		Libraries
-Source0:	http://dev-www.libreoffice.org/src/libqxp/%{name}-%{version}.tar.xz
+Source0:	https://dev-www.libreoffice.org/src/libqxp/%{name}-%{version}.tar.xz
 # Source0-md5:	778e9ee464b6db3c10f45b7c7d97b22d
-URL:		http://libqxp.sourceforge.net/
+URL:		https://wiki.documentfoundation.org/DLP/Libraries/libqxp
 BuildRequires:	boost-devel
 BuildRequires:	libicu-devel
 BuildRequires:	librevenge-devel >= 0.0
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-QuarkXPress Import Library.
+libqxp is a library and a set of tools for reading and converting
+QuarkXPress file format. It supports versions 3.1-4.1 currently.
+
+%description -l pl.UTF-8
+libqxp to biblioteka i zestaw narzędzi do odczytu i konwersji
+formatu plików QuarkXPress. Obecnie obsługuje wersje 3.1-4.1.
 
 %package devel
 Summary:	Header files for libqxp library
@@ -29,7 +35,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libqxp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	librevenge-devel >= 0.0
-Requires:	libstdc++-devel
+Requires:	libstdc++-devel >= 6:4.7
 
 %description devel
 Header files for libqxp library.
@@ -92,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/qxp2raw
 %attr(755,root,root) %{_bindir}/qxp2svg
 %attr(755,root,root) %{_bindir}/qxp2text
