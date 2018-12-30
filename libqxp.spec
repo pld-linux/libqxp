@@ -5,12 +5,12 @@
 Summary:	QuarkXPress Import Library
 Summary(pl.UTF-8):	Biblioteka do importu dokumentów QuarkXPress
 Name:		libqxp
-Version:	0.0.1
+Version:	0.0.2
 Release:	1
 License:	MPL v2.0
 Group:		Libraries
 Source0:	https://dev-www.libreoffice.org/src/libqxp/%{name}-%{version}.tar.xz
-# Source0-md5:	778e9ee464b6db3c10f45b7c7d97b22d
+# Source0-md5:	7011efa81fe8b6b1f2dd7d05d7bfb173
 URL:		https://wiki.documentfoundation.org/DLP/Libraries/libqxp
 BuildRequires:	boost-devel
 BuildRequires:	libicu-devel
