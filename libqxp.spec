@@ -59,9 +59,7 @@ Statyczna biblioteka libqxp.
 Summary:	libqxp API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libqxp
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 libqxp API documentation.
