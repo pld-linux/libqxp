@@ -1,16 +1,16 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static library
+%bcond_without	static_libs	# static library
 
 Summary:	QuarkXPress Import Library
 Summary(pl.UTF-8):	Biblioteka do importu dokumentów QuarkXPress
 Name:		libqxp
-Version:	0.0.2
-Release:	11
+Version:	0.0.3
+Release:	1
 License:	MPL v2.0
 Group:		Libraries
 Source0:	https://dev-www.libreoffice.org/src/libqxp/%{name}-%{version}.tar.xz
-# Source0-md5:	7011efa81fe8b6b1f2dd7d05d7bfb173
+# Source0-md5:	bb155f331beae634e2968ea1562da906
 URL:		https://wiki.documentfoundation.org/DLP/Libraries/libqxp
 BuildRequires:	boost-devel
 BuildRequires:	libicu-devel
@@ -101,12 +101,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/qxp2raw
 %attr(755,root,root) %{_bindir}/qxp2svg
 %attr(755,root,root) %{_bindir}/qxp2text
-%attr(755,root,root) %{_libdir}/libqxp-0.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libqxp-0.0.so.0
+%{_libdir}/libqxp-0.0.so.*.*.*
+%ghost %{_libdir}/libqxp-0.0.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libqxp-0.0.so
+%{_libdir}/libqxp-0.0.so
 %{_includedir}/libqxp-0.0
 %{_pkgconfigdir}/libqxp-0.0.pc
 
